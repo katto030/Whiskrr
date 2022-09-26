@@ -4,7 +4,8 @@ const generalInfoSchema = new Schema ({
   origin: String,
   originId: String,
   gender: String,
-  age: String
+  age: String,
+  description: String
 });
 
 const notesSchema = new Schema ({
@@ -23,17 +24,19 @@ const fosterSchema = new Schema ({
     start: Date,
     end: Date
   }],
-  Food: [{
+  food: [{
     foodName: String,
     foodAmount: String,
-    foodNotes: String
+    foodNotes: String,
+    foodFreq: String
   }],
-  Medication: [{
+  medication: [{
     medName: String,
     medAmount: String,
-    medNotes: String
+    medNotes: String,
+    medFreq: String
   }],
-  notes: notesSchema,
+  notes: [notesSchema],
   pfp: String,
   photos: Array
 })

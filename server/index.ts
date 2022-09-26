@@ -2,7 +2,7 @@ import express, {Express} from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import router from  './router/router';
+import router from  './router';
 const db = require('../db');
 
 dotenv.config();
