@@ -1,8 +1,8 @@
 import React from "react";
-import CalendarApp from "./dashboard-sub/Calendar";
-import CurrentFoster from "./dashboard-sub/CurrentFoster";
-import DailyLog from "./dashboard-sub/DailyLog";
-import FormList from "./dashboard-sub/FormList";
+import CalendarApp from "./Calendar";
+import CurrentFoster from "./CurrentFoster";
+import DailyLog from "./DailyLog";
+import FormList from "./FormList";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -22,8 +22,8 @@ const Dashboard: React.FC<Props> = ({ user }) => {
         <Col sm={8}><CalendarApp /></Col>
       </Row>
       <Row>
-        <Col sm={5}><DailyLog /></Col>
-        <Col sm={5}><FormList /></Col>
+        <Col><DailyLog /></Col>
+        <Col><FormList /></Col>
       </Row>
       <Row>View Past Fosters</Row>
     </Container>

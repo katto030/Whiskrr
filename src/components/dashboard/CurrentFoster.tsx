@@ -1,13 +1,13 @@
 import React, { useContext, useEffect} from "react";
-import { DataCtx } from "../../User";
+import { DataCtx } from "../User";
 
 const CurrentFoster = () => {
   const dataCtx = useContext(DataCtx);
 
   return (
     <div id="curr-foster" className="component-container">
-      Current {dataCtx?.data.length ? 'fosters' : 'foster'}:
-        <button id="add-foster-btn">Add a foster</button>
+      <h5>Current {dataCtx?.data.length ? 'fosters' : 'foster'}:</h5>
+      <button id="add-foster-btn">Add a foster</button>
       <div id="currFoster-list">
         {
           dataCtx ?

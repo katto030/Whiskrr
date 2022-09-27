@@ -7,7 +7,6 @@ import Container from 'react-bootstrap/Container';
 const App : React.FC = () => {
   // const [user, setUser] = useState("Kat");
   const user = "Kat"
-  console.log('app rendered');
 
   return (
     <Container id="app">
