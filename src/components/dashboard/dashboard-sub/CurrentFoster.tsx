@@ -5,7 +5,7 @@ const CurrentFoster = () => {
   const dataCtx = useContext(DataCtx);
 
   return (
-    <div id="curr-foster">
+    <div id="curr-foster" className="component-container">
       Current {dataCtx?.data.length ? 'fosters' : 'foster'}:
         <button id="add-foster-btn">Add a foster</button>
       <div id="currFoster-list">

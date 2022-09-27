@@ -12,7 +12,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import ModalDialog from 'react-bootstrap/ModalDialog'
 
 
 const locales = {
@@ -46,22 +45,45 @@ console.log('events', dummy)
 const CalendarApp = () => {
   const [allEvents, setAllEvents] = useState<EventsInterface[]>(dummy)
   const [newEvent, setNewEvent] = useState({title: "", start: new Date(), end: new Date()})
-  const [show, setShow] = useState(false);
-    const [fullscreen, setFullscreen] = useState(true);
+  const [calShow, setCalShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+
+  const handleCalClose = () => setCalShow(false);
+  const handleCalOpen = () => setCalShow(true);
 
   const handleAddEvent = () => {
     setAllEvents([...allEvents, newEvent]);
   }
 
   return (
-    <Container id="calendar-app">
+    <Container id="calendar-app" className="component-container">
+      <h5>Foster Calendar</h5>
+      <>
+        <Button className="datepicker" variant="outline-danger" onClick={handleCalOpen}>
+          View Calendar
+        </Button>
+        <Modal dialogClassName="modal-lg" show={calShow} onHide={handleCalClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Foster Calendar</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Calendar
+              localizer={localizer}
+              events={allEvents}
+              startAccessor="start"
+              endAccessor="end"
+              style={{height: 500, width: '100%'}}
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCalClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
       <Container id="calendar-headers">
-        <Container>
-          <h5>Foster Calendar</h5>
-        </Container>
         <Container id="datepicker-container">
           <Row>
             <Col><p>Add Event name: </p></Col>
@@ -95,37 +117,14 @@ const CalendarApp = () => {
               />
             </Col>
           </Row>
-          <button
+          <Button
+            variant="outline-danger"
             className="datepicker"
             onClick={() => handleAddEvent()}>
             Add Event
-          </button>
+          </Button>
         </Container>
       </Container>
-      <>
-        <Button variant="primary" onClick={handleShow}>
-          View Calendar
-        </Button>
-        <Modal dialogClassName="modal-lg" show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Foster Calendar</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Calendar
-              localizer={localizer}
-              events={allEvents}
-              startAccessor="start"
-              endAccessor="end"
-              style={{height: 500, width: '100%'}}
-            />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
 
     </Container>
   )
