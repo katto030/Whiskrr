@@ -11,26 +11,31 @@ const db_api = 'http://localhost:8080/fosters';
 
 export const DataContext = createContext({});
 
-const User : React.FC<Props>= ({ user }) => {
+const User : React.FC<Props> = ({ user }) => {
   const [data, setData] = useState({});
-  const [page, setPage] = useState<number>(0);
-
-  console.log(process.env.DB_API)
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     axios.get(`${db_api}/${user}`)
-      .then((res:AxiosResponse) => console.log(res))
+      .then((res:AxiosResponse) => {
+        setData(res.data[0])
+      })
       .catch((err) => console.log(err))
   }, [user])
 
+  console.log('data state --', data, 'page state --', page)
+
   return (
     <DataContext.Provider value={data}>
-      User: {user}
+      <div id="user">
+
+      *this is the user page*
       {
-        page === 0 ? <Dashboard />
+        page === 0 ? <Dashboard user={user}/>
         : page === 1 ? <p>individual foster page</p>
         : <p>forms</p>
       }
+      </div>
     </DataContext.Provider>
   )
 }
