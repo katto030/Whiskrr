@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import User from './components/user/User';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const App : React.FC = () => {
   const [user, setUser] = useState("Kat");
   console.log('app rendered');
 
   return (
-    <div className="App container">
+    <Container id="app">
       <p>Foster Tracker</p>
       <User user={user}/>
-    </div>
+    </Container>
   );
 }
 
