@@ -1,5 +1,5 @@
 import React from "react";
-import Calendar from "./dashboard-sub/Calendar";
+import CalendarApp from "./dashboard-sub/Calendar";
 import CurrentFoster from "./dashboard-sub/CurrentFoster";
 import DailyLog from "./dashboard-sub/DailyLog";
 import FormList from "./dashboard-sub/FormList";
@@ -19,7 +19,7 @@ const Dashboard: React.FC<Props> = ({ user }) => {
       </Row>
       <Row>
         <Col sm={4}><CurrentFoster /></Col>
-        <Col sm={6}><Calendar /></Col>
+        <Col sm={6}><CalendarApp /></Col>
       </Row>
       <Row>
         <Col sm={5}><DailyLog /></Col>

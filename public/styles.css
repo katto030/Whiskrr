@@ -37,7 +37,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 #app {
-  background-color: rgb(226, 242, 247);
   height: 100%;
 }
 
@@ -45,6 +44,7 @@ p, h1, h2, h3, h4, h5, h6 {
 #dashboard {
   height: 100%;
 }
+
 /* -- CURRENT FOSTER -- */
 #curr-foster {
   border: 0.5px solid rgb(197, 197, 197);

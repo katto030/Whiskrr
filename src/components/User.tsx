@@ -8,7 +8,7 @@ interface Props {
   user: string;
 }
 
-const db_api = 'http://localhost:8080/fosters';
+const db_api = 'http://localhost:3000/fosters';
 
 interface DataCtxInterface {
   data: {[key: string]: any;}[];
