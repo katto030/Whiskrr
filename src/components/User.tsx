@@ -10,24 +10,33 @@ interface Props {
 
 const db_api = 'http://localhost:8080/fosters';
 
-export const DataContext = createContext({});
+interface DataCtxInterface {
+  data: {[key: string]: any;}[];
+}
+
+export const DataCtx = createContext<DataCtxInterface | null>(null)
 
 const User : React.FC<Props> = ({ user }) => {
-  const [data, setData] = useState({});
-  const [page, setPage] = useState(0);
+  const [data, setData] = useState([{}]);
+  // const [page, setPage] = useState(0);
+  const page = 0;
 
   useEffect(() => {
     axios.get(`${db_api}/${user}`)
       .then((res:AxiosResponse) => {
-        setData(res.data[0])
+        setData(res.data);
       })
       .catch((err) => console.log(err))
   }, [user])
 
   console.log('data state --', data, 'page state --', page)
 
+  const dataCtx:DataCtxInterface = {
+    data: data
+  }
+
   return (
-    <DataContext.Provider value={data}>
+    <DataCtx.Provider value={dataCtx}>
       <div id="user">
 
       *this is the user page*
@@ -37,7 +46,7 @@ const User : React.FC<Props> = ({ user }) => {
         : <p>forms</p>
       }
       </div>
-    </DataContext.Provider>
+    </DataCtx.Provider>
   )
 }
 
