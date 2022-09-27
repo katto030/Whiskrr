@@ -5,8 +5,14 @@ import startOfWeek from "date-fns/startOfWeek";
 import React, { useEffect, useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import { Container } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import ModalDialog from 'react-bootstrap/ModalDialog'
 
 
 const locales = {
@@ -31,8 +37,8 @@ const dummy = [
 
 interface EventsInterface {
   title: string;
-  start?: Date | string;
-  end?: Date | string;
+  start?: Date;
+  end?: Date;
 }
 
 console.log('events', dummy)
@@ -40,49 +46,88 @@ console.log('events', dummy)
 const CalendarApp = () => {
   const [allEvents, setAllEvents] = useState<EventsInterface[]>(dummy)
   const [newEvent, setNewEvent] = useState({title: "", start: new Date(), end: new Date()})
+  const [show, setShow] = useState(false);
+    const [fullscreen, setFullscreen] = useState(true);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleAddEvent = () => {
     setAllEvents([...allEvents, newEvent]);
   }
 
   return (
-    <div>
-      <h1>Calendar</h1>
-      <h2>Add new Event</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Add Event Title"
-          value={newEvent.title}
-          onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}
-        ></input>
-        <p>Start Date</p>
-        <DatePicker
-          placeholderText="Start Date"
-          selected={newEvent.start}
-          onChange={(start:Date) => setNewEvent({...newEvent, start})}
-        />
-        <p>End Date</p>
-        <DatePicker
-          placeholderText="End Date"
-          selected={newEvent.end}
-          onChange={(end:Date) => setNewEvent({...newEvent, end})}
-        />
+    <Container id="calendar-app">
+      <Container id="calendar-headers">
+        <Container>
+          <h5>Foster Calendar</h5>
+        </Container>
+        <Container id="datepicker-container">
+          <Row>
+            <Col><p>Add Event name: </p></Col>
+            <Col>
+              <input
+                className="datepicker"
+                type="text"
+                placeholder="Add Event Title"
+                value={newEvent.title}
+                onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}
+            ></input>
+            </Col>
+          </Row>
+          <Row>
+            <Col><p>Start Date</p></Col>
+            <Col>
+              <DatePicker
+                className="datepicker"
+                selected={newEvent.start}
+                onChange={(start:Date) => setNewEvent({...newEvent, start})}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col><p>End Date</p></Col>
+            <Col>
+             <DatePicker
+              selected={newEvent.end}
+              className="datepicker"
+              onChange={(end:Date) => setNewEvent({...newEvent, end})}
+              />
+            </Col>
+          </Row>
+          <button
+            className="datepicker"
+            onClick={() => handleAddEvent()}>
+            Add Event
+          </button>
+        </Container>
+      </Container>
+      <>
+        <Button variant="primary" onClick={handleShow}>
+          View Calendar
+        </Button>
+        <Modal dialogClassName="modal-lg" show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Foster Calendar</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Calendar
+              localizer={localizer}
+              events={allEvents}
+              startAccessor="start"
+              endAccessor="end"
+              style={{height: 500, width: '100%'}}
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
 
-        <button
-          onClick={() => handleAddEvent()}>
-          Add Event
-        </button>
-
-      </div>
-      <Calendar
-        localizer={localizer}
-        events={allEvents}
-        startAccessor="start"
-        endAccessor="end"
-        style={{height: 500, width: '80%'}}
-      />
-    </div>
+    </Container>
   )
 }
 

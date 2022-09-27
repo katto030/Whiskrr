@@ -72,3 +72,26 @@ p, h1, h2, h3, h4, h5, h6 {
 .foster-name {
   display: flex;
 }
+
+/* -- CALENDAR -- */
+#calendar-app {
+  border: 0.5px solid rgb(197, 197, 197);
+  padding: 5%;
+}
+
+#datepicker-container {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.datepicker {
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 0.5% 2.5%;
+}
+
+button.datepicker {
+  background-color: rgb(237, 237, 237);
+  color: coral;
+  border-color: coral;
+}

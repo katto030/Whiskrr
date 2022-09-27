@@ -14,12 +14,12 @@ const Dashboard: React.FC<Props> = ({ user }) => {
   return (
     <Container id="dashboard">
       <Row>
-        <Col id="db-header" sm={8}>Welcome back, {user} !</Col>
-        <Col sm={2}>Log out</Col>
+        <Col id="db-header" sm={11}>Welcome back, {user} !</Col>
+        <Col>Log out</Col>
       </Row>
       <Row>
-        <Col sm={4}><CurrentFoster /></Col>
-        <Col sm={6}><CalendarApp /></Col>
+        <Col ><CurrentFoster /></Col>
+        <Col sm={8}><CalendarApp /></Col>
       </Row>
       <Row>
         <Col sm={5}><DailyLog /></Col>
