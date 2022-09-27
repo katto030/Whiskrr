@@ -12,7 +12,7 @@ interface Props {
 }
 const Dashboard: React.FC<Props> = ({ user }) => {
   return (
-    <Container>
+    <Container id="dashboard">
       <Row>
         <Col id="db-header" sm={8}>Welcome back, {user} !</Col>
         <Col sm={2}>Log out</Col>

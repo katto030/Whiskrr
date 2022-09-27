@@ -1,25 +1,22 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect} from "react";
 import { DataCtx } from "../../User";
-import Button from 'react-bootstrap/Button'
 
 const CurrentFoster = () => {
   const dataCtx = useContext(DataCtx);
 
-  useEffect(() => {
-
-  }, [])
   return (
     <div id="curr-foster">
       Current {dataCtx?.data.length ? 'fosters' : 'foster'}:
         <button id="add-foster-btn">Add a foster</button>
       <div id="currFoster-list">
         {
-          dataCtx?.data.length ?
-          dataCtx.data.map((foster) => {
+          dataCtx ?
+          dataCtx.data.map((foster, i) => {
+            console.log(foster._id)
             return (
-              <div className="foster-name">
+              <div key={foster._id} className="foster-name">
                 <i className="fa-solid fa-paw"></i>
-                <p>{foster.fosterName}</p>
+                <p >{foster.fosterName}</p>
               </div>
             )
           })
