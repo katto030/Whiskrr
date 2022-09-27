@@ -18,6 +18,7 @@ const notesSchema = new Schema ({
 const fosterSchema = new Schema ({
   user: String,
   fosterName: String,
+  adopted: Boolean,
   generalInfo: generalInfoSchema,
   events: [{
     eventName: String,
