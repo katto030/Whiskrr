@@ -36,7 +36,7 @@ const PhotoForm = () => {
             .catch((err) => {if (btn) {btn.innerHTML = 'Error, try again?'};})
         })
     }
-    const form:any = document.getElementById('photo-upload-form');
+    const form = document.querySelector('form');
     if (form) {
       form.reset();
     }
