@@ -10,7 +10,6 @@ const PhotoForm = () => {
   const [imgFile, setImgFile] = useState<File | null>(null);
   const [data, setData] = useState<{}[] | null>(null);
   const [id, setId] = useState<string | null>(null);
-  const [status, setStatus] = useState<Boolean>(true)
 
   const handleImgChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.length) {
@@ -33,7 +32,7 @@ const PhotoForm = () => {
         .then((res) => {
           const pushedPhotos = photos ? photos.photos.push(res) : null;
           axios.post(`${SERVER_URL}/${id}`, pushedPhotos)
-            .then((res) => {if (btn) {btn.innerHTML = 'Uploaded! Upload another one?'};})
+            .then((res) => {if (btn) {btn.innerHTML = 'Uploaded!'};})
             .catch((err) => {if (btn) {btn.innerHTML = 'Error, try again?'};})
         })
     }
