@@ -2,7 +2,6 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionBody from "react-bootstrap/esm/AccordionBody";
-
 import PhotoForm from "./forms/PhotoForm";
 
 const forms:string[] = ['Potty', 'Weight','Appetite','Behavior','Others'];
