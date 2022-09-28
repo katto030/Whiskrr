@@ -130,7 +130,7 @@ button.datepicker:hover {
 
 /* -- FORM LIST -- */
 #form-list {
-  height: 23vw;
+  height: 22vw;
   padding: 0;
   overflow-y: auto;
   margin-bottom: 2%;
@@ -148,7 +148,7 @@ button.datepicker:hover {
 
 /* -- DAILY LOG -- */
 #daily-log {
-  height: 23vw;
+  height: 22vw;
   margin-bottom: 2%;
   overflow-y: auto;
   padding: 1%;
