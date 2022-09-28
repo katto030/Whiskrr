@@ -117,6 +117,15 @@ button.datepicker:hover {
   border: lightpink;
 }
 
+.rbc-event.rbc-event-allday {
+  background-color: lightpink;
+}
+
+.rbc-event.rbc-event-allday.rbc-selected {
+  background-color: pink;
+  border-color: gray;
+}
+
 
 /* -- FORM LIST -- */
 #form-list {
