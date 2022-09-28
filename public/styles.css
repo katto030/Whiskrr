@@ -54,6 +54,10 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 2%;
 }
 
+button.pink-hover-btn.nav-btn {
+  padding: 1% 5%;
+  width: 7vw;
+}
 button.pink-hover-btn {
   border-radius: 5px;
   border-width: 1px;
