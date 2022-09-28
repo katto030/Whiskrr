@@ -36,6 +36,10 @@ const PhotoForm = () => {
             .catch((err) => {if (btn) {btn.innerHTML = 'Error, try again?'};})
         })
     }
+    const form:any = document.getElementById('photo-upload-form');
+    if (form) {
+      form.reset();
+    }
   }
 
   useEffect(() => {
@@ -43,7 +47,7 @@ const PhotoForm = () => {
   }, [dataCtx])
 
   return (
-    <form onSubmit={(e) => handlePhotoUpload(e)}id="photo-upload-form">
+    <form onSubmit={(e) => handlePhotoUpload(e)} id="photo-upload-form">
       <Stack direction="horizontal" gap={3}>
         Name:
         <select onChange={(e) => handleIdChange(e)} name="foster-name">
