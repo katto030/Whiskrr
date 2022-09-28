@@ -33,9 +33,15 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+/* -- APP -- */
 #app {
   height: 100%;
   font-family: 'Poppins', sans-serif;
+  padding-top: 1%;
+}
+
+#logout {
+  left:100px
 }
 
 .component-container {
@@ -46,7 +52,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* -- DASHBOARD --*/
+/* -- DASHBOARD -- */
 #dashboard {
   height: 100%;
 }
@@ -114,29 +120,30 @@ button.datepicker:hover {
 
 /* -- FORM LIST -- */
 #form-list {
-  overflow-y: scroll;
-}
-
-#form-list-header {
-  padding-top: 1%;
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background-color: white;
+  height: 23vw;
+  padding: 0;
+  overflow-y: auto;
+  margin-bottom: 2%;
 }
 
 .form-name {
-  margin: 1.5%;
-  padding-top: 1%;
-}
-
-.collapsed {
-  height: 10px ;
+  margin-top: 2%;
+  margin-bottom: 1%;
 }
 
 .accordion-button {
-  height: 50px;
+  height: 20/6vw;
 }
 
 
 /* -- DAILY LOG -- */
+#daily-log {
+  height: 23vw;
+  margin-bottom: 2%;
+  overflow-y: auto;
+  padding: 1%;
+}
+
+#daily-log-header {
+  text-align: center;
+}

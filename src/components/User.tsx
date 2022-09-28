@@ -30,8 +30,6 @@ const User : React.FC<Props> = ({ user }) => {
   return (
     <DataCtx.Provider value={data}>
       <div id="user">
-
-      *this is the user page*
       {
         page === 0 ? <Dashboard user={user}/>
         : page === 1 ? <p>individual foster page</p>

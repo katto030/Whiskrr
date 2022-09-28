@@ -28,7 +28,7 @@ const DailyLog = () => {
 
   return (
     <Container id="daily-log" className="component-container">
-      <h5>Daily Log</h5>
+      <Container id="daily-log-header"><h5>Daily Log</h5></Container>
       <BsFillSunFill size={30} className="log-icon" style={{color: 'rgb(255, 226, 80)'}}/>
       {
         log.morning.length ?

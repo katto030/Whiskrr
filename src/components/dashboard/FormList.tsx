@@ -8,8 +8,7 @@ const FormList = () => {
 
   return (
     <Container id="form-list" className="component-container">
-      {/* <h5 id="form-list-header">Form List</h5> */}
-      <Accordion id='accordian'>
+      <Accordion>
         {
           forms.map((form, i) =>
             <Accordion.Item key={form + 'item'} eventKey={i.toString()}>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import User from './components/User';
 import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
+import Navbar from 'react-bootstrap/Navbar';
+import Stack from 'react-bootstrap/Stack';
 
 const App : React.FC = () => {
   // const [user, setUser] = useState("Kat");
@@ -10,7 +10,17 @@ const App : React.FC = () => {
 
   return (
     <Container id="app">
-      <p>Foster Tracker</p>
+      <Navbar>
+        <Container>
+          <Navbar.Brand>Welcome Back {user}!</Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text>
+              Logout
+            </Navbar.Text>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       <User user={user}/>
     </Container>
   );
