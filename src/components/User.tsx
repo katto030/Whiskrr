@@ -32,8 +32,7 @@ const User : React.FC<Props> = ({ user }) => {
       <div id="user">
       {
         page === 0 ? <Dashboard user={user}/>
-        : page === 1 ? <p>individual foster page</p>
-        : <p>forms</p>
+        : <p>individual foster page</p>
       }
       </div>
     </DataCtx.Provider>

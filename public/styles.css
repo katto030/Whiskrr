@@ -127,6 +127,10 @@ button.datepicker:hover {
   border-color: gray;
 }
 
+.rbc-event {
+  background-color: lightpink !important;
+}
+
 
 /* -- FORM LIST -- */
 #form-list {
