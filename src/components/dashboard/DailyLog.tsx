@@ -34,8 +34,8 @@ const DailyLog = () => {
         log.morning.length ?
           <Stack>
             {
-              log.morning.map((task:string) =>
-              <div>{task}</div>
+              log.morning.map((task:string, i:number) =>
+              <div key={'morning task # ' + i }>{task}</div>
               )
             }
           </Stack>
@@ -47,8 +47,8 @@ const DailyLog = () => {
         log.afternoon.length ?
           <Stack>
             {
-              log.afternoon.map((task:string) =>
-              <div>{task}</div>
+              log.afternoon.map((task:string, i:number) =>
+              <div key={'afternoon task # ' + i }>{task}</div>
               )
             }
           </Stack>
@@ -60,8 +60,8 @@ const DailyLog = () => {
         log.evening.length ?
           <Stack>
             {
-              log.evening.map((task:string) =>
-              <div>{task}</div>
+              log.evening.map((task:string, i:number) =>
+              <div key={'evening task # ' + i }>{task}</div>
               )
             }
           </Stack>

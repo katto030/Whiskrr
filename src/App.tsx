@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import User from './components/User';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import Stack from 'react-bootstrap/Stack';
 
 const App : React.FC = () => {
   // const [user, setUser] = useState("Kat");

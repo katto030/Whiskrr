@@ -26,7 +26,7 @@ export const logParser = (data:{[key: string]: any;}[]) => {
     afternoon: [],
     evening: []
   } as parsedLogInterface;
-  console.log('LOG PARSER DATA', data)
+
   data.forEach((foster:any) : void => {
     let { fosterName, food, medication } = foster;
 
@@ -48,7 +48,6 @@ export const logParser = (data:{[key: string]: any;}[]) => {
     })
   })
 
-  console.log('LOG PARSER RESULT', parsedLog);
   return parsedLog;
 }
 

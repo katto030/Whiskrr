@@ -37,7 +37,6 @@ p, h1, h2, h3, h4, h5, h6 {
 #app {
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  padding-top: 1%;
 }
 
 #logout {
@@ -46,11 +45,14 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .component-container {
   border: 0.5px solid rgb(197, 197, 197);
-  margin-top: 3%;
+  margin-bottom: 2%;
   height: 20vw;
   border-radius: 5px;
 }
 
+.navbar.navbar-light {
+  padding: 2%;
+}
 
 /* -- DASHBOARD -- */
 #dashboard {
@@ -60,7 +62,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* -- CURRENT FOSTER -- */
 #curr-foster {
-  margin-top: 6%;
   padding: 5%;
   display: flex;
   flex-direction: column;

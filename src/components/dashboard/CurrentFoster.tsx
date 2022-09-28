@@ -1,4 +1,4 @@
-import React, { useContext, useEffect} from "react";
+import React, { useContext } from "react";
 import { DataCtx } from "../User";
 
 const CurrentFoster = () => {
@@ -12,7 +12,6 @@ const CurrentFoster = () => {
         {
           dataCtx ?
           dataCtx.map((foster:any, i:number) => {
-            console.log(foster._id)
             return (
               <div key={foster._id + 'div'} className="foster-name">
                 <i key={foster._id + 'icon'} className="fa-solid fa-paw"></i>
