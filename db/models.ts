@@ -33,7 +33,7 @@ module.exports.addFoster = async (newData:any) => {
 module.exports.updateFoster = async (id:string, newData:any) => {
   try {
     console.log('!!model [updateFoster] reached!! id: ', id );
-    const posted = await Fosters.findOneAndUpdate({_id: id}, newData)
+    const posted = await Fosters.findOneAndUpdate({_id: id}, { $set: newData })
     return posted;
   } catch (err) {
     console.log('!!model [updateFoster] err!!', err);

@@ -3,9 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionBody from "react-bootstrap/esm/AccordionBody";
 
-const FormList = () => {
-  const forms:string[] = ['Potty', 'Weight','Appetite','Behavior','Others'];
+import PhotoForm from "./forms/PhotoForm";
 
+const forms:string[] = ['Potty', 'Weight','Appetite','Behavior','Others'];
+
+const FormList = () => {
   return (
     <Container id="form-list" className="component-container">
       <Accordion>
@@ -27,7 +29,7 @@ const FormList = () => {
             <p className="form-name">Upload Picture</p>
           </Accordion.Header>
           <AccordionBody>
-          Hello
+            <PhotoForm />
           </AccordionBody>
         </Accordion.Item>
       </Accordion>

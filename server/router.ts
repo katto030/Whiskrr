@@ -29,7 +29,7 @@ router.post('/', async (req: Request, res: Response) => {
   //create new foster for user
   try {
     const newData = req.body;
-    console.log(newData)
+    console.log('--data for post req--', newData)
     const posted = await model.addFoster(newData);
     res.status(201).json(posted);
   } catch (err) {

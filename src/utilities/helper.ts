@@ -1,3 +1,6 @@
+import axios from "axios";
+import { IMGBB_KEY, IMGBB_URL } from "./config";
+
 interface foodInterface {
   foodAmount: string,
   foodFreq: string,
@@ -51,3 +54,15 @@ export const logParser = (data:{[key: string]: any;}[]) => {
   return parsedLog;
 }
 
+export const getPhotoUrl = (img: File) => {
+  let data = new FormData();
+      data.set('key', IMGBB_KEY);
+      data.append('image', img);
+  return axios({
+        method: 'post',
+        url: IMGBB_URL,
+        data: data
+      })
+        .then((res) => res.data.data.url)
+        .catch((err) => console.log(err))
+}

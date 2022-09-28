@@ -2,23 +2,22 @@ import React, {useState, createContext, useEffect } from "react";
 // import { createContext } from "vm";
 import Dashboard from "./dashboard/Dashboard";
 import axios, { AxiosResponse } from 'axios';
+import { SERVER_URL } from "../utilities/config";
 
 
 interface Props {
   user: string;
 }
 
-const db_api = 'http://localhost:3000/fosters';
-
-export const DataCtx = createContext<{}[] | null>(null)
+export const DataCtx = createContext<{[key:string]:any}[] | null>(null)
 
 const User : React.FC<Props> = ({ user }) => {
-  const [data, setData] = useState<{}[] | null>(null);
+  const [data, setData] = useState<{[key:string]:any}[] | null>(null);
   // const [page, setPage] = useState(0);
   const page = 0;
 
   useEffect(() => {
-    axios.get(`${db_api}/${user}`)
+    axios.get(`${SERVER_URL}/${user}`)
       .then((res:AxiosResponse) => {
         setData(res.data);
       })
