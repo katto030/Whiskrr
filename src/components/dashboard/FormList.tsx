@@ -8,16 +8,16 @@ const FormList = () => {
 
   return (
     <Container id="form-list" className="component-container">
-      <h5 id="form-list-header">Form List</h5>
+      {/* <h5 id="form-list-header">Form List</h5> */}
       <Accordion id='accordian'>
         {
           forms.map((form, i) =>
-            <Accordion.Item eventKey={i.toString()}>
-              <Accordion.Header id="accordian-header">
-                <i className="fa-solid fa-paw"></i>
-                <p className="form-name">Record {form}</p>
+            <Accordion.Item key={form + 'item'} eventKey={i.toString()}>
+              <Accordion.Header key={form + 'header'} id="accordian-header">
+                <i key={form + 'icon'} className="fa-solid fa-paw"></i>
+                <p key={form + 'form'} className="form-name">Record {form}</p>
               </Accordion.Header>
-              <AccordionBody>
+              <AccordionBody key={form + 'body'}>
               Hello
               </AccordionBody>
             </Accordion.Item>

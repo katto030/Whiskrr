@@ -33,8 +33,6 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-
-
 #app {
   height: 100%;
   font-family: 'Poppins', sans-serif;
@@ -44,11 +42,15 @@ p, h1, h2, h3, h4, h5, h6 {
   border: 0.5px solid rgb(197, 197, 197);
   margin-top: 3%;
   height: 20vw;
+  border-radius: 5px;
 }
+
+
 /* -- DASHBOARD --*/
 #dashboard {
   height: 100%;
 }
+
 
 /* -- CURRENT FOSTER -- */
 #curr-foster {
@@ -77,6 +79,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .foster-name {
   display: flex;
 }
+
 
 /* -- CALENDAR -- */
 #calendar-app {
@@ -108,9 +111,10 @@ button.datepicker:hover {
   border: lightpink;
 }
 
+
 /* -- FORM LIST -- */
 #form-list {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 #form-list-header {
@@ -133,9 +137,6 @@ button.datepicker:hover {
 .accordion-button {
   height: 50px;
 }
-
-
-
 
 
 /* -- DAILY LOG -- */
