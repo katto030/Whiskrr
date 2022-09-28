@@ -57,7 +57,7 @@ const CalendarApp = () => {
     <Container id="calendar-app" className="component-container">
       <h5>Foster Calendar</h5>
       <>
-        <Button className="datepicker" variant="outline-danger" onClick={handleCalOpen}>
+        <Button className="pink-hover-btn" variant="outline-danger" onClick={handleCalOpen}>
           View Calendar
         </Button>
         <Modal dialogClassName="modal-lg" show={calShow} onHide={handleCalClose}>
@@ -74,9 +74,9 @@ const CalendarApp = () => {
             />
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleCalClose}>
+            <button className="pink-hover-btn" onClick={handleCalClose}>
               Close
-            </Button>
+            </button>
           </Modal.Footer>
         </Modal>
       </>
@@ -114,12 +114,11 @@ const CalendarApp = () => {
               />
             </Col>
           </Row>
-          <Button
-            variant="outline-danger"
-            className="datepicker"
+          <button
+            className="pink-hover-btn"
             onClick={() => handleAddEvent()}>
             Add Event
-          </Button>
+          </button>
         </Container>
       </Container>
 

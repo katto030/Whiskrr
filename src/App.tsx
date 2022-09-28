@@ -1,7 +1,7 @@
 import React from 'react';
 import User from './components/User';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+
 
 const App : React.FC = () => {
   // const [user, setUser] = useState("Kat");
@@ -9,17 +9,6 @@ const App : React.FC = () => {
 
   return (
     <Container id="app">
-      <Navbar>
-        <Container>
-          <Navbar.Brand>Welcome Back {user}!</Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-              Logout
-            </Navbar.Text>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
       <User user={user}/>
     </Container>
   );

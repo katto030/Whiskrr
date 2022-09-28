@@ -8,13 +8,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 interface Props {
-  user: string;
+  click: React.Dispatch<React.SetStateAction<{[key: string]: any;}[] | null>>;
 }
-const Dashboard: React.FC<Props> = ({ user }) => {
+
+const Dashboard: React.FC<Props> = ({ click }) => {
   return (
     <Container id="dashboard">
       <Row>
-        <Col ><CurrentFoster /></Col>
+        <Col ><CurrentFoster click={click} /></Col>
         <Col sm={8}><CalendarApp /></Col>
       </Row>
       <Row>

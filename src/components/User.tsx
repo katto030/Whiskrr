@@ -2,6 +2,9 @@ import React, {useState, createContext, useEffect } from "react";
 import Dashboard from "./dashboard/Dashboard";
 import axios, { AxiosResponse } from 'axios';
 import { SERVER_URL } from "../utilities/config";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import FosterPage from "./fosterPage/FosterPage";
 
 
 interface Props {
@@ -12,8 +15,7 @@ export const DataCtx = createContext<{[key:string]:any}[] | null>(null)
 
 const User : React.FC<Props> = ({ user }) => {
   const [data, setData] = useState<{[key:string]:any}[] | null>(null);
-  // const [page, setPage] = useState(0);
-  const page = 0;
+  const [foster, setFoster] = useState<{[key:string]:any}[] | null>(null);
 
   useEffect(() => {
     axios.get(`${SERVER_URL}/${user}`)
@@ -23,14 +25,27 @@ const User : React.FC<Props> = ({ user }) => {
       .catch((err) => console.log(err));
   }, [user])
 
-  console.log('data state --', data, 'page state --', page)
+  console.log('data state --', data, 'page state --', foster)
 
   return (
     <DataCtx.Provider value={data}>
+      <Navbar>
+        <Container>
+          <Navbar.Brand>Welcome Back {user}!</Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text>
+              {
+                foster ? <button className="date-picker" onClick={() => setFoster(null)}>Back</button > : <button >Logout</button >
+              }
+            </Navbar.Text>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       <div id="user">
       {
-        page === 0 ? <Dashboard user={user}/>
-        : <p>individual foster page</p>
+        foster  ? <FosterPage foster={foster} />
+        : <Dashboard click={setFoster}/>
       }
       </div>
     </DataCtx.Provider>

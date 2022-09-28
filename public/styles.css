@@ -54,6 +54,21 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 2%;
 }
 
+button.pink-hover-btn {
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 0.5% 2.5%;
+  background-color: lightpink;
+  color: white;
+  border-color: coral;
+}
+
+button.pink-hover-btn:hover {
+  background-color: white !important;
+  color: lightpink !important;
+  border-color: lightpink !important;
+}
+
 /* -- DASHBOARD -- */
 #dashboard {
   height: 100%;
@@ -67,11 +82,6 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 
-#add-foster-btn {
-  color: lightpink;
-  border: 1px solid lightpink;
-  border-radius: 5px;
-}
 
 .fa-paw {
   color: lightpink;
@@ -100,23 +110,6 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2%;
 }
 
-.datepicker {
-  border-radius: 5px;
-  border-width: 1px;
-  padding: 0.5% 2.5%;
-}
-
-button.datepicker {
-  background-color: lightpink;
-  color: white;
-  border-color: coral;
-}
-
-button.datepicker:hover {
-  background-color: white;
-  color: lightpink;
-  border: lightpink;
-}
 
 .rbc-event.rbc-event-allday {
   background-color: lightpink;
