@@ -164,6 +164,10 @@ button.pink-hover-btn:hover {
   margin: 0 2%;
 }
 
+#pfp {
+  border: 1px solid gray;
+}
+
 /* -- PHOTOS -- */
 .photos-card-carousel {
   display: flex;

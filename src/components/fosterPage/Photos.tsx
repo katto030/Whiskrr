@@ -25,7 +25,7 @@ const Photos:React.FC<Props>= ({ foster }) => {
     if (index  === (foster.photos.length - displayLimit + 1)) {
       // setScroll(scrollAmount + (6.25 * window.innerWidth / 100))
     } else {
-      setScroll(scrollAmount + (14 * window.innerWidth / 100))
+      setScroll(scrollAmount + (15 * window.innerWidth / 100))
     }
   }
 
@@ -34,7 +34,7 @@ const Photos:React.FC<Props>= ({ foster }) => {
     if (index  === (foster.photos.length - displayLimit)) {
       // setScroll(scrollAmount - (6.25 * window.innerWidth / 100))
     } else {
-      setScroll(scrollAmount - (14 * window.innerWidth / 100))
+      setScroll(scrollAmount - (15 * window.innerWidth / 100))
     }
   }
 

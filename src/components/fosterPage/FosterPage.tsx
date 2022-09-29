@@ -22,8 +22,9 @@ const FosterPage:React.FC<Props>= ({ foster }) => {
       <Stack gap={5} direction="horizontal">
         <h5>{foster.fosterName}</h5>
         <Image
+          id="pfp"
           roundedCircle
-          src={foster.pfp.length ? foster.pfp : "https://i.ibb.co/St00wCQ/pocky.jpg"}
+          src={foster.pfp.length ? foster.pfp : "https://i.ibb.co/2dskGjq/IMG-9976.jpg"}
           width="10%">
         </Image>
       </Stack>
