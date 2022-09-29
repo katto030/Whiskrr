@@ -50,16 +50,18 @@ const CalendarApp = () => {
   const handleCalOpen = () => setCalShow(true);
 
   const handleAddEvent = () => {
-    setAllEvents([...allEvents, newEvent]);
+    if (newEvent.title.length) {
+      setAllEvents([...allEvents, newEvent]);
+    }
   }
 
   return (
     <Container id="calendar-app" className="component-container">
       <h5>Foster Calendar</h5>
       <>
-        <Button className="pink-hover-btn" variant="outline-danger" onClick={handleCalOpen}>
+        <button className="pink-hover-btn" onClick={handleCalOpen}>
           View Calendar
-        </Button>
+        </button>
         <Modal dialogClassName="modal-lg" show={calShow} onHide={handleCalClose}>
           <Modal.Header closeButton>
             <Modal.Title>Foster Calendar</Modal.Title>

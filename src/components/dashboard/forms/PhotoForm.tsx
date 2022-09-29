@@ -18,28 +18,31 @@ const PhotoForm = () => {
   }
 
   const handleIdChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    console.log('OPTION CHANGE', e.target.value)
     setId(e.target.value);
   }
 
   const handlePhotoUpload = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = document.querySelector('form');
     const btn = document.getElementById('photo-submit-btn');
     if (btn) {btn.innerHTML = 'Uploading'};
     if (imgFile && id && dataCtx) {
-      let photos = dataCtx.find(({ _id }) => _id === id);
+      let fosterData = dataCtx.find(({ _id }) => _id === id);
       getPhotoUrl(imgFile)
         .then((res) => {
-          const pushedPhotos = photos ? photos.photos.push(res) : null;
-          axios.post(`${SERVER_URL}/${id}`, pushedPhotos)
-            .then((res) => {if (btn) {btn.innerHTML = 'Uploaded!'};})
-            .catch((err) => {if (btn) {btn.innerHTML = 'Error, try again?'};})
+          if (fosterData) {fosterData.photos.push(res)}
+          axios.post(`${SERVER_URL}/${id}`, {photos: fosterData?.photos})
+            .then((res) => {
+              if (btn) {btn.innerHTML = 'Uploaded!'};
+              if (form) {form.reset();}
+              setTimeout(() => {
+                if (btn) {btn.innerHTML = 'Upload'};
+              }, 4000)
+            })
+            .catch((err) => {if (btn) {btn.innerHTML = 'Error, try again?'}; if (form) {form.reset();}})
         })
     }
-    const form = document.querySelector('form');
-    if (form) {
-      form.reset();
-    }
+
   }
 
   useEffect(() => {
@@ -66,7 +69,7 @@ const PhotoForm = () => {
       {
 
       }
-      <button id="photo-submit-btn" type="submit" className="datepicker">Upload</button>
+      <button type="submit" id="photo-submit-btn" className="pink-hover-btn">Upload</button>
 
     </form>
   )
