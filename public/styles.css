@@ -213,7 +213,20 @@ button.pink-hover-btn:hover {
 }
 
 /* -- NOTES -- */
+#gen-info {
+  height: auto;
+  padding: 2%;
+}
+
 .note-name {
   margin: 0 !important;
+}
+
+.edit {
+  margin-right: 5%;
+}
+
+.info {
+  margin: 0;
 }
 

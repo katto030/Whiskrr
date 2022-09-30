@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IMGBB_KEY, IMGBB_URL } from "./config";
 
-interface foodInterface {
+export interface foodInterface {
   foodAmount: string,
   foodFreq: string,
   foodName: string,
@@ -15,7 +15,7 @@ interface parsedLogInterface {
   evening: string[];
 }
 
-interface medicationInterface {
+export interface medicationInterface {
   medAmount: string,
   medFreq: string,
   medName: string,
@@ -68,3 +68,11 @@ export const getPhotoUrl = (img: File) => {
 };
 
 export const categories:string[] = ['Potty', 'Weight','Appetite','Behavior','Others'];
+
+export interface FormCompInterface {
+  Potty: JSX.Element;
+  Weight: JSX.Element;
+  Appetite: JSX.Element;
+  Behavior: JSX.Element;
+  Others: JSX.Element;
+}
