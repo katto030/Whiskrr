@@ -54,7 +54,7 @@ const Photos:React.FC<Props>= ({ foster }) => {
                   <img src={photo} alt="foster" />
                 </div>
               )
-            : <div>No pictures just yet ...</div>
+            : <div id="no-photo">No pictures just yet ...</div>
           }
         </div>
       </div>

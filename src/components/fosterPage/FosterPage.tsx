@@ -9,6 +9,9 @@ import FoodInfo from "./FoodInfo";
 import MedInfo from "./MedInfo";
 import Photos from "./Photos";
 import Notes from "./Notes";
+import { BsFillHouseFill } from "react-icons/bs";
+import { FaPaw } from "react-icons/fa"
+import { PLACEHOLDER_PFP } from "../../utilities/config";
 
 export interface Props {
   foster: {[key:string]:any};
@@ -23,9 +26,17 @@ const FosterPage:React.FC<Props>= ({ foster }) => {
         <Image
           id="pfp"
           roundedCircle
-          src={foster.pfp.length ? foster.pfp : "https://i.ibb.co/2dskGjq/IMG-9976.jpg"}
+          src={foster.pfp.length ? foster.pfp : PLACEHOLDER_PFP}
           width="10%">
         </Image>
+        <div className="ms-auto">
+          {
+            foster.adopted
+              ? <Stack id="status-div" direction="horizontal"><BsFillHouseFill size={20} /><p id="status">Adopted</p></Stack>
+              : <Stack id="status-div" direction="horizontal"><FaPaw size={20} /><p id="status">Foster</p></Stack>
+          }
+        </div>
+
       </Stack>
       <Container>
         <Row>
@@ -37,10 +48,11 @@ const FosterPage:React.FC<Props>= ({ foster }) => {
           </Col>
           <Col>
             <Notes />
+            <Photos foster={foster}/>
           </Col>
         </Row>
       </Container>
-      <Photos foster={foster}/>
+
     </Stack>
   )
 }
