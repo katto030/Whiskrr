@@ -65,4 +65,6 @@ export const getPhotoUrl = (img: File) => {
       })
         .then((res) => res.data.data.url)
         .catch((err) => console.log(err))
-}
+};
+
+export const categories:string[] = ['Potty', 'Weight','Appetite','Behavior','Others'];

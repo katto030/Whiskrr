@@ -3,21 +3,21 @@ import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionBody from "react-bootstrap/esm/AccordionBody";
 import PhotoForm from "./forms/PhotoForm";
+import { categories } from "../../utilities/helper";
 
-const forms:string[] = ['Potty', 'Weight','Appetite','Behavior','Others'];
 
 const FormList = () => {
   return (
     <Container id="form-list" className="component-container">
       <Accordion>
         {
-          forms.map((form, i) =>
-            <Accordion.Item key={form + 'item'} eventKey={i.toString()}>
-              <Accordion.Header key={form + 'header'} id="accordian-header">
-                <i key={form + 'icon'} className="fa-solid fa-paw"></i>
-                <p key={form + 'form'} className="form-name">Record {form}</p>
+          categories.map((category, i) =>
+            <Accordion.Item key={category + 'item'} eventKey={i.toString()}>
+              <Accordion.Header key={category + 'header'} id="accordian-header">
+                <i key={category + 'icon'} className="fa-solid fa-paw"></i>
+                <p key={category + 'form'} className="form-name">Record {category}</p>
               </Accordion.Header>
-              <AccordionBody key={form + 'body'}>
+              <AccordionBody key={category + 'body'}>
               Hello
               </AccordionBody>
             </Accordion.Item>

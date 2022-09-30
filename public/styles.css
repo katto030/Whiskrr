@@ -73,6 +73,10 @@ button.pink-hover-btn:hover {
   border-color: lightpink !important;
 }
 
+.pink-hover:hover {
+  color: pink;
+}
+
 /* -- DASHBOARD -- */
 #dashboard {
   height: 100%;
@@ -138,8 +142,8 @@ button.pink-hover-btn:hover {
 }
 
 .form-name {
-  margin-top: 2%;
-  margin-bottom: 1%;
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 .accordion-button {
@@ -207,3 +211,9 @@ button.pink-hover-btn:hover {
   width: 13vw;
   margin: auto 1vw;
 }
+
+/* -- NOTES -- */
+.note-name {
+  margin: 0 !important;
+}
+
