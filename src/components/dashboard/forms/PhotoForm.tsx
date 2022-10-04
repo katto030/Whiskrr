@@ -23,8 +23,9 @@ const PhotoForm = () => {
 
   const handlePhotoUpload = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = document.querySelector('form');
+    const form:any = document.getElementById('photo-upload-form');
     const btn = document.getElementById('photo-submit-btn');
+    console.log('BUTTON', btn)
     if (btn) {btn.innerHTML = 'Uploading'};
     if (imgFile && id && dataCtx) {
       let fosterData = dataCtx.data?.find(({ _id }) => _id === id);
@@ -37,6 +38,7 @@ const PhotoForm = () => {
               if (form) {form.reset();}
               setTimeout(() => {
                 if (btn) {btn.innerHTML = 'Upload'};
+                console.log('BUTTON', btn)
               }, 4000)
             })
             .catch((err) => {if (btn) {btn.innerHTML = 'Error, try again?'}; if (form) {form.reset();}})

@@ -39,7 +39,7 @@ const WeightForm = () => {
             <input onChange={(e) => handleWeightChange(e)} type="number" id="weight-upload" name="weight"></input>
             Lbs
           </Stack>
-          <button type="submit" id="photo-submit-btn" className="pink-hover-btn">Record</button>
+          <button type="submit" id="weight-submit-btn" className="pink-hover-btn">Record</button>
       </form>
     </div>
   )

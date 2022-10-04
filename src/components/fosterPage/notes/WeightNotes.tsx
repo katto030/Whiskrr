@@ -39,9 +39,9 @@ const pdata = [
 const WeightNotes = () => {
   return (
     <div id="weight-note">
-      WeightNotes
+      <h5 className="note-title">WeightNotes</h5>
       <ResponsiveContainer width="100%" aspect={3}>
-        <LineChart data={pdata} margin={{ right: 300 }}>
+        <LineChart data={pdata} margin={{ left: 130, right: 150 }}>
           <CartesianGrid />
              <XAxis dataKey="name"
                     interval={'preserveStartEnd'} />
