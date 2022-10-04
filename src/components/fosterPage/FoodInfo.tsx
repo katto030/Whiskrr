@@ -1,10 +1,13 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
-import { Props } from "./FosterPage";
 import Table from 'react-bootstrap/Table';
 import { foodInterface } from "../../utilities/helper";
 import { BiPencil } from "react-icons/bi";
 import Stack from "react-bootstrap/Stack";
+
+interface Props {
+  foster: {[key:string]:any};
+}
 
 const FoodInfo:React.FC<Props> = ({ foster }) => {
   return (

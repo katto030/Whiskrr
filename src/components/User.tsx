@@ -15,7 +15,7 @@ interface Props {
 
 interface DataInterface {
   data?: {[key:string]:any}[] | null;
-  setNote?: React.Dispatch<React.SetStateAction<string>>
+  setNote?: React.Dispatch<React.SetStateAction<string | null>>
 }
 
 export const DataCtx = createContext<DataInterface>({})
@@ -23,7 +23,8 @@ export const DataCtx = createContext<DataInterface>({})
 const User : React.FC<Props> = ({ user }) => {
   const [data, setData] = useState<{[key:string]:any}[] | null>(null);
   const [foster, setFoster] = useState<{[key:string]:any}[] | null>(null);
-  const [note, setNote] = useState<string>("")
+  const [note, setNote] = useState<string | null>(null)
+
   useEffect(() => {
     axios.get(`${SERVER_URL}/${user}`)
       .then((res:AxiosResponse) => {
@@ -32,7 +33,7 @@ const User : React.FC<Props> = ({ user }) => {
       .catch((err) => console.log(err));
   }, [user])
 
-  console.log('data state --', data, 'page state --', foster)
+  console.log('WHATS WRONG WITH MY STATES', note)
 
   return (
     <DataCtx.Provider value={{data, setNote}}>
@@ -52,7 +53,7 @@ const User : React.FC<Props> = ({ user }) => {
       <div id="user">
       {
         note ? <Note note={note}/> :
-        foster  ? <FosterPage foster={foster} />
+        foster  ? <FosterPage setNote={setNote} foster={foster} />
         : <Dashboard click={setFoster}/>
       }
       </div>

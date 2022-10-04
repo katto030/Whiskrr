@@ -1,10 +1,13 @@
 import React from "react";
-import { Props } from "./FosterPage";
 import Table from 'react-bootstrap/Table';
 import { medicationInterface } from "../../utilities/helper";
 import { BiPencil } from "react-icons/bi";
 import Stack from "react-bootstrap/Stack";
 import Container from 'react-bootstrap/Container';
+
+interface Props {
+  foster: {[key:string]:any};
+}
 
 const MedInfo:React.FC<Props> = ({ foster }) => {
   return (

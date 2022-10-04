@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GiHighGrass } from 'react-icons/gi';
 import { TbScaleOutline, TbMeat, TbNotes } from 'react-icons/tb';
 import { FaRegCommentDots } from "react-icons/fa";
@@ -9,6 +9,7 @@ import AppetiteNotes from "./notes/AppetiteNotes";
 import BehaviorNotes from "./notes/BehaviorNotes";
 import OthersNotes from "./notes/OthersNotes";
 import { categories } from "../../utilities/helper";
+import { DataCtx } from "../User";
 
 const noteComponents:any = {
   Potty: PottyNotes,
@@ -26,7 +27,14 @@ const iconComponents:any = {
   Others: FaRegCommentDots
 }
 
-const Notes = () => {
+interface Props {
+  set: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+const Notes:React.FC<Props> = ({ set }) => {
+  const dataCtx = useContext(DataCtx);
+
+  console.log('HELP', set)
   return (
     <div>
       <h5>Notes</h5>
@@ -35,8 +43,9 @@ const Notes = () => {
           categories.map((category) => {
             const Note = noteComponents[category];
             const Icon = iconComponents[category];
+            console.log('SET THE NOTE PLS', category)
             return (
-              <Stack gap={2} className="note-list-item pink-hover" direction="horizontal">
+              <Stack onClick={() => {set(category)}} gap={2} className="note-list-item pink-hover" direction="horizontal">
                 <Icon /><p className="note-name">{category} Notes</p>
               </Stack>
             )

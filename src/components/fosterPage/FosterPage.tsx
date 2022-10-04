@@ -15,10 +15,10 @@ import { PLACEHOLDER_PFP } from "../../utilities/config";
 
 export interface Props {
   foster: {[key:string]:any};
+  setNote: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const FosterPage:React.FC<Props>= ({ foster }) => {
-  console.log('foster page', foster)
+const FosterPage:React.FC<Props>= ({ foster, setNote }) => {
   return (
     <Stack id="foster-page" gap={3} >
       <Stack gap={5} direction="horizontal">
@@ -47,7 +47,7 @@ const FosterPage:React.FC<Props>= ({ foster }) => {
             <MedInfo foster={foster} />
           </Col>
           <Col>
-            <Notes />
+            <Notes set={setNote}/>
             <Photos foster={foster}/>
           </Col>
         </Row>

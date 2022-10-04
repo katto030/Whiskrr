@@ -1,7 +1,10 @@
 import React from "react";
-import { Props } from "./FosterPage";
 import { BiPencil } from "react-icons/bi";
 import Stack from "react-bootstrap/Stack";
+
+interface Props {
+  foster: {[key:string]:any};
+}
 
 const GeneralInfo:React.FC<Props> = ({foster}) => {
   return (
