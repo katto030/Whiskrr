@@ -27,7 +27,7 @@ const PhotoForm = () => {
     const btn = document.getElementById('photo-submit-btn');
     if (btn) {btn.innerHTML = 'Uploading'};
     if (imgFile && id && dataCtx) {
-      let fosterData = dataCtx.find(({ _id }) => _id === id);
+      let fosterData = dataCtx.data?.find(({ _id }) => _id === id);
       getPhotoUrl(imgFile)
         .then((res) => {
           if (fosterData) {fosterData.photos.push(res)}
@@ -46,7 +46,9 @@ const PhotoForm = () => {
   }
 
   useEffect(() => {
-    setData(dataCtx);
+    if (dataCtx.data) {
+      setData(dataCtx.data);
+    }
   }, [dataCtx])
 
   return (
@@ -66,9 +68,6 @@ const PhotoForm = () => {
         Picture:
         <input onChange={(e) => handleImgChange(e)} type="file" accept="image/png, image/jpeg" id="picture-upload" name="picture"></input>
       </Stack>
-      {
-
-      }
       <button type="submit" id="photo-submit-btn" className="pink-hover-btn">Upload</button>
 
     </form>

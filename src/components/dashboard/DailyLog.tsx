@@ -20,8 +20,8 @@ const DailyLog = () => {
   const [log, setLog] = useState<LogInterface>(startLog)
   const dataCtx = useContext(DataCtx);
   useEffect(() => {
-    if (dataCtx) {
-      let temp = logParser(dataCtx);
+    if (dataCtx.data) {
+      let temp = logParser(dataCtx.data);
       setLog(temp);
     }
   }, [dataCtx])

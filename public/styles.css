@@ -150,6 +150,18 @@ button.pink-hover-btn:hover {
   height: 20/6vw;
 }
 
+#new-foster-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-foster-input {
+  width: 50%;
+}
+
+.description {
+  height: 100px;
+}
 
 /* -- DAILY LOG -- */
 #daily-log {
@@ -232,9 +244,12 @@ button.pink-hover-btn:hover {
 
 .info {
   margin: 0;
+  padding: 0 !important;
 }
 
 #status {
   margin-bottom: 0;
   margin-left: 5%;
 }
+
+

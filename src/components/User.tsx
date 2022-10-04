@@ -5,18 +5,25 @@ import { SERVER_URL } from "../utilities/config";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import FosterPage from "./fosterPage/FosterPage";
+import WeightNotes from "./fosterPage/notes/WeightNotes";
+import Note from "./fosterPage/notes/Note";
 
 
 interface Props {
   user: string;
 }
 
-export const DataCtx = createContext<{[key:string]:any}[] | null>(null)
+interface DataInterface {
+  data?: {[key:string]:any}[] | null;
+  setNote?: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const DataCtx = createContext<DataInterface>({})
 
 const User : React.FC<Props> = ({ user }) => {
   const [data, setData] = useState<{[key:string]:any}[] | null>(null);
   const [foster, setFoster] = useState<{[key:string]:any}[] | null>(null);
-
+  const [note, setNote] = useState<string>("")
   useEffect(() => {
     axios.get(`${SERVER_URL}/${user}`)
       .then((res:AxiosResponse) => {
@@ -28,7 +35,7 @@ const User : React.FC<Props> = ({ user }) => {
   console.log('data state --', data, 'page state --', foster)
 
   return (
-    <DataCtx.Provider value={data}>
+    <DataCtx.Provider value={{data, setNote}}>
       <Navbar>
         <Container>
           <Navbar.Brand>Welcome Back {user}!</Navbar.Brand>
@@ -44,6 +51,7 @@ const User : React.FC<Props> = ({ user }) => {
       </Navbar>
       <div id="user">
       {
+        note ? <Note note={note}/> :
         foster  ? <FosterPage foster={foster} />
         : <Dashboard click={setFoster}/>
       }
