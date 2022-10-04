@@ -35,8 +35,7 @@ const Note:React.FC<Props> = ({ note }) => {
   const Note = noteComponents[note];
 
   return (
-    <div>
-      <h5>Note</h5>
+    <div id="individual-note-div">
       <Note />
     </div>
   )

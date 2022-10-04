@@ -11,52 +11,49 @@ import {
 
 const pdata = [
   {
-      name: 'MongoDb',
-      student: 11,
-      fees: 120
+      name: '9/10/2022',
+      Pocky: 7.5,
   },
   {
-      name: 'Javascript',
-      student: 15,
-      fees: 12
+      name: '9/12/2022',
+      Pocky: 7.2,
   },
   {
-      name: 'PHP',
-      student: 5,
-      fees: 10
+      name: '9/16/2022',
+      Pocky: 7.4,
   },
   {
-      name: 'Java',
-      student: 10,
-      fees: 5
+      name: '9/20/2022',
+      Pocky: 7,
   },
   {
-      name: 'C#',
-      student: 9,
-      fees: 4
+      name: '9/25/2022',
+      Pocky: 7.5,
   },
   {
-      name: 'C++',
-      student: 10,
-      fees: 8
+      name: '9/30/2022',
+      Pocky: 7.1
   },
 ];
 
 const WeightNotes = () => {
   return (
-    <div>WeightNotes
+    <div id="weight-note">
+      WeightNotes
       <ResponsiveContainer width="100%" aspect={3}>
         <LineChart data={pdata} margin={{ right: 300 }}>
           <CartesianGrid />
              <XAxis dataKey="name"
                     interval={'preserveStartEnd'} />
-             <YAxis></YAxis>
+             <YAxis type="number" domain={['dataMin - 1', 'dataMax + 1']}></YAxis>
              <Legend />
              <Tooltip />
-             <Line dataKey="student"
-                   stroke="black" activeDot={{ r: 8 }} />
-              <Line dataKey="fees"
-                    stroke="red" activeDot={{ r: 8 }} />
+             {/* <Line dataKey="Kita"
+                   stroke="black" activeDot={{ r: 8 }} /> */}
+              <Line dataKey="Pocky"
+                    stroke="pink"
+                    activeDot={{ r: 8 }}
+                    strokeWidth={3} />
           </LineChart>
       </ResponsiveContainer>
     </div>

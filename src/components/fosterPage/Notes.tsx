@@ -43,7 +43,6 @@ const Notes:React.FC<Props> = ({ set }) => {
           categories.map((category) => {
             const Note = noteComponents[category];
             const Icon = iconComponents[category];
-            console.log('SET THE NOTE PLS', category)
             return (
               <Stack onClick={() => {set(category)}} gap={2} className="note-list-item pink-hover" direction="horizontal">
                 <Icon /><p className="note-name">{category} Notes</p>

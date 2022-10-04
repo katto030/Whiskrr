@@ -44,7 +44,11 @@ const User : React.FC<Props> = ({ user }) => {
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
               {
-                foster ? <button className="pink-hover-btn nav-btn" onClick={() => setFoster(null)}>Back</button > : <button className="pink-hover-btn nav-btn" >Logout</button >
+                note ?
+                <button className="pink-hover-btn nav-btn" onClick={() => setNote(null)}>Back</button > :
+                foster ?
+                <button className="pink-hover-btn nav-btn" onClick={() => setFoster(null)}>Back</button > :
+                <button className="pink-hover-btn nav-btn" >Logout</button >
               }
             </Navbar.Text>
           </Navbar.Collapse>

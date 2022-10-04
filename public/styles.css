@@ -252,4 +252,10 @@ button.pink-hover-btn:hover {
   margin-left: 5%;
 }
 
+#weight-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
