@@ -5,5 +5,5 @@
 Whiskrr is an all-in-one tracking app for your foster babies. It allows users to upload photos, enter notes, and keep track of foster related events. 
 
 ### Demo
-![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)
-https://youtu.be/Nyt0GKX5G-s
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/Nyt0GKX5G-s)
+
